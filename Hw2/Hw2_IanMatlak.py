@@ -1,7 +1,11 @@
 arr = [1, 7, 8, 5, 4, 9]
+
+
 def LDS(arr):
     max = 1
+    # this is just a variable that equals a single value of arr[0]
     last = arr[0]
+    # this is just an array which holds the 0 index of arr[0] and can hold more
     LDS = [arr[0]]
     # iterate 1-array length
     for x in range(1, len(arr)):
@@ -15,7 +19,7 @@ def LDS(arr):
             LDS.append(last)
         # if LDS is at 0 index
         elif(len(LDS) == 1):
-            # check index 2 is less than index 3 
+            # check index 2 is less than index 3
             # ex. 1 5 6
             # LDS = 1, arr[x] = 5, arr[x+1] = 6
             # Probably wrongs
@@ -27,4 +31,6 @@ def LDS(arr):
             else:
                 LDS[0] = arr[x]
     print(max, LDS)
+
+
 LDS(arr)
