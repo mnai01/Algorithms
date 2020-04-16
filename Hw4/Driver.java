@@ -43,21 +43,24 @@ public class Driver {
 		
 		return stairArr[n];
 	}
-		//Time Complexity: O(n)
+		// Time Complexity: O(n)
 		// var |= value is short for var = var | value
 		// The signed left shift operator "<<" shifts a bit pattern to the left
 		// The signed right shift operator ">>" shifts a bit pattern to the right.
 		// The unsigned right shift operator ">>>" shifts a zero into the leftmost position
 	 public static int FindRepeated(String str) {
-		//checker will contain 32 bits that will represent each lowercase letter in the alphabet
+		// checker will contain 32 bits that will represent each lowercase letter in the alphabet
 		// The lowest bit will represent a and the 26th is z
 		// An integer to store presence/absence 
         // of 26 characters using its 32 bits. 
         int checker = 0; 
-        //The first round in the for loop checker is equal to 32 0s and if we get b as the first letter 
-      	//we will compare if both variables have 1 in the same positions
+        // The first round in the for loop checker is equal to 32 0s and if we get b as the first letter 
+      	// we will compare if both variables have 1 in the same positions
         for (int i = 0; i < str.length(); ++i) 
         { 
+			// When you type 'a' you will get the char a wich is represented by the int 97. 
+			// So lets say you take 'c' - 'a' you will get 99 - 97 = 2
+			// wich is 0010 in binary
             int val = (str.charAt(i)-'a'); 
             // if (0 & 1 ) > 1 same as if (0000 & 0001 ) > 1 that will return 0000 wich is not > 1
             // If bit corresponding to current 
@@ -72,7 +75,7 @@ public class Driver {
         return -1; 
     }
 	 
-	 //Time Complexity: O(n)
+	 // Time Complexity: O(n)
 	 public static boolean hasArrayTwoCandidates(int A[], int arr_size, int sum) { 
 		 
 		int l, r; 
