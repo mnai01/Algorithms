@@ -11,7 +11,6 @@ public class Driver {
         int n = 21; 
         int arr_size = A.length; 
 		System.out.println(hasArrayTwoCandidates(A,arr_size,n));
-
 	}
 		// Problem 1
 		// Climbing Stairs with Recurrsive Dynamic programming 
@@ -29,34 +28,26 @@ public class Driver {
 		   0  1  2  3  4
 		   And now we can be literal in how we access the nth subproblem
 		*/
-		int[] dp = new int[n + 1];
-		
-		// n = 0, the answer is 1. We can only take no steps
-		dp[0] = 1;
-		
-		// n = 1, the answer is 1. We can only take 1 step
-		dp[1] = 1;
-		
-		// n = 2, the answer is 1. We can only take 2 step
-		dp[2] = 2;
+		int[] stairArr = new int[n + 1];
+		// This represents only taking 2 steps
+		stairArr[0] = 1;
+		// This represents only taking 2 steps
+		stairArr[1] = 1;
+		// This represents only taking 2 steps
+		stairArr[2] = 2;
 
-		/*
-		  The answer to the ith subproblem is the sum between the answer
-		  to the subproblems of climbing i - 1 stairs and i - 2 stairs
-		*/
 		for (int i = 3; i <= n; i++) {
-		  dp[i] = dp[i - 1] + dp[i - 2] + dp[i - 3];
+		  stairArr[i] = stairArr[i - 1] + stairArr[i - 2] + stairArr[i - 3];
 		}
 		
-		/*
-		  This is what we want and built to the while way. The answer for
-		  the total unique ways to climb n steps when we can either take a
-		  1 step or 2 step
-		*/
-		return dp[n];
+		return stairArr[n];
 	}
-	  //Time Complexity: O(n)
-	 public static int FirstRepeated(String str) {
+		//Time Complexity: O(n)
+		// var |= value is short for var = var | value
+		// The signed left shift operator "<<" shifts a bit pattern to the left
+		// The signed right shift operator ">>" shifts a bit pattern to the right.
+		// The unsigned right shift operator ">>>" shifts a zero into the leftmost position
+	 public static int FindRepeated(String str) {
 		// An integer to store presence/absence 
         // of 26 characters using its 32 bits. 
         int checker = 0; 

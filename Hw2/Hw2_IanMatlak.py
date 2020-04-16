@@ -5,6 +5,7 @@ arr = [1, 7, 8, 5, 4, 9]
 def LDS(arr):
     count = 1
     last = arr[0]
+    # this is just an array which holds the 0 index of arr[0] and can hold more
     LDS = [arr[0]]
     # iterate 1-array length
     for x in range(1, len(arr)):
