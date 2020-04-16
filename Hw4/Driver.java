@@ -35,7 +35,8 @@ public class Driver {
 		stairArr[1] = 1;
 		// This represents only taking 2 steps
 		stairArr[2] = 2;
-
+		
+		// 3 gets set on the first run and is now saved and this is repeated aka Memoization 
 		for (int i = 3; i <= n; i++) {
 		  stairArr[i] = stairArr[i - 1] + stairArr[i - 2] + stairArr[i - 3];
 		}
@@ -48,14 +49,17 @@ public class Driver {
 		// The signed right shift operator ">>" shifts a bit pattern to the right.
 		// The unsigned right shift operator ">>>" shifts a zero into the leftmost position
 	 public static int FindRepeated(String str) {
+		//checker will contain 32 bits that will represent each lowercase letter in the alphabet
+		// The lowest bit will represent a and the 26th is z
 		// An integer to store presence/absence 
         // of 26 characters using its 32 bits. 
         int checker = 0; 
-       
+        //The first round in the for loop checker is equal to 32 0s and if we get b as the first letter 
+      	//we will compare if both variables have 1 in the same positions
         for (int i = 0; i < str.length(); ++i) 
         { 
             int val = (str.charAt(i)-'a'); 
-            
+            // if (0 & 1 ) > 1 same as if (0000 & 0001 ) > 1 that will return 0000 wich is not > 1
             // If bit corresponding to current 
             // character is already set 
             if ((checker & (1 << val)) > 0) {
