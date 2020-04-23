@@ -66,3 +66,62 @@ Daily bounds from 8 to 19
 A meeting duration can be like 1:00
 Return a list of availability in which the two can meet.
 ```
+
+**Hw5**
+
+```
+Problem 1:
+
+A delivery truck driver travels between different stops (stations). Assume the driver has to travel from StopA to StopB. There are N ( 0 < N <=10^10) stops between A and B.
+StopA, StopB, and the stops in between are on the same straight line. At each stop, the driver can travel a max distance ( >=0) from that stop towards PointB.
+
+Returns the minimum number of stops required to reach PointB. If it is not possible to reach PointB, return -1.
+
+
+
+Study the following example:
+
+Example 1:  [ PointA, Stop2, Stop3, Stop4, Stop5, Stop6, Stop7, PointB ]
+            [4, 2, 5, 1, 2, 1, 2, 1]
+
+
+
+ PointA is at index 0 and PointB at index n-1 (n=8 number of stops).
+
+
+The output is 2.
+
+This is because if the driver starts with a 4 which allows him to stop at stops 2, 3, 4, and 5.  If the driver stops at Stop3 (with max distance 5) then he can reach PointB.
+So the driver needs to stop at StopA and Stop3 only.
+
+
+Example 2: [2, 1, 2, 1, 0, 3]
+
+The output is -1.
+There is no possible way to reach PointB.
+
+
+Example 3: [2, 3, 1, 1, 4]
+
+The output is 2.
+It starts at A, then stops at Stop2, and then reach PointB.
+
+
+Example 4: [2, 3, 1, 1, 4,1,1,2,1]
+
+The output is 3.
+It starts at A, then stops at the second stop, then stops at the fifth stop, and then reaches PointB.
+
+
+Example 5: [2, 3, 1]
+
+The output is 1.
+It starts at A and then reaches PointB.
+
+
+Problem 2: (You must be prepared to present your solution - make sure to have a working mic and a webcam)
+
+
+Given a string A containing characters including ’(‘ and ’)’.
+Find the length of the longest valid (well-formed) parentheses substring.
+```
