@@ -29,9 +29,9 @@ public class Driver {
 		   And now we can be literal in how we access the nth subproblem
 		*/
 		int[] stairArr = new int[n + 1];
-		// This represents only taking 2 steps
+		// n = 0, the answer is 1. We can only take no steps
 		stairArr[0] = 1;
-		// This represents only taking 2 steps
+		// n = 1, the answer is 1. We can only take 1 step
 		stairArr[1] = 1;
 		// This represents only taking 2 steps
 		stairArr[2] = 2;
@@ -84,13 +84,22 @@ public class Driver {
 		
 		/* Now look for the two candidates  
 		in the sorted array*/
+		// left part of the index
 		l = 0; 
+		// last index in the array
 		r = arr_size - 1; 
+
+		//while the index to the left is less then the right index, meaning they havent intersected yet
 		while (l < r) { 
+			// if value of l + value of r equals the sum we are looking for
 			if (A[l] + A[r] == sum) 
 				return true; 		
+			// else if its less then the some, increment l, this will make sure we add value
+			// next time we check since its sorted
 			else if (A[l] + A[r] < sum) 			
 				l++; 
+			// else it means that the sum we got was to high and we need to move r more to the left
+			// this makes r a lesser value because the array is sorted.
 			else // A[i] + A[j] > sum 	
 				r--; 
 		} 
